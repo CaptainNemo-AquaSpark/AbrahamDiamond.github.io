@@ -13,18 +13,25 @@ body {
 .logo {
     width: 100%;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
+
 .logo img {
-    height: 150px;
-    filter: drop-shadow(0 0 6px #ffcc00);
+    height: 95px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.94;  /* reduces glare */
+    filter: drop-shadow(0 0 3px rgba(0,255,65,0.4)); /* soft glow */
+    pointer-events: none;
 }
 
 /* HEADER */
 header {
     background: #000;
     border-bottom: 2px solid #00ff41;
-    padding: 0.4rem 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
     width: 100%;
     position: relative;
     text-align: center;
@@ -153,37 +160,38 @@ footer {
 }
 
 /* ============================================== */
-/*       VISIBLE SCROLL GLITCH EFFECT             */
+/*     SOFTENED SCROLL GLITCH (reduced strength)  */
 /* ============================================== */
 
 .soft-glitch {
     position: relative;
     display: inline-block;
     color: #d3ff00;
-    text-shadow: 0 0 8px #d3ff00;
+    text-shadow: 0 0 5px #d3ff00; /* reduced glow */
 }
 
-/* ghost layers */
+/* ghosts */
 .soft-glitch::before,
 .soft-glitch::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* hidden */
+    opacity: 0;   /* invisible until scrolling */
     pointer-events: none;
-    transform: translate(0,0);
 }
 
+/* red + cyan */
 .soft-glitch::before { color: #ff0033; }
 .soft-glitch::after  { color: #00eaff; }
 
-/* ACTIVE GLITCH */
+/* active glitch on scroll */
 body.glitching .soft-glitch::before,
 body.glitching .soft-glitch::after {
-    opacity: 0.7;
+    opacity: 0.55; /* reduced from 0.7 */
 }
 
+/* reduced movement */
 body.glitching .soft-glitch::before {
     animation: glitchRed 0.25s steps(2);
 }
@@ -192,8 +200,8 @@ body.glitching .soft-glitch::after {
 }
 
 @keyframes glitchRed {
-    50% { transform: translate(-4px, 2px); }
+    50% { transform: translate(-2px, 1px); }
 }
 @keyframes glitchCyan {
-    50% { transform: translate(4px, -2px); }
+    50% { transform: translate(2px, -1px); }
 }
