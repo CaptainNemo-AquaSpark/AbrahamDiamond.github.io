@@ -5,13 +5,26 @@
     box-sizing: border-box;
 }
 
-/* BASE BODY */
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background: #000;
     color: #00ff41;
     transition: background 0.3s, color 0.3s;
+}
+
+/* LOGO (SMALL) */
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+}
+
+.logo img {
+    height: 22px;   /* tiny + clean */
+    width: auto;
+    filter: drop-shadow(0 0 2px #ffcc00);
 }
 
 /* HEADER */
@@ -35,6 +48,30 @@ nav ul {
 nav li {
     margin: 0 2rem;
 }
+
+nav a {
+    color: #00ff41;
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: 0 0 5px #00ff41;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ff88;
+    text-shadow: 0 0 20px #00ff88;
+}
+
+/* SECTION BASE */
+section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+section::before {
+    content}
 
 nav a {
     color: #00ff41;
