@@ -31,9 +31,9 @@ body {
 }
 
 .logo img {
-    height: 55px;
+    height: 70px;
     width: auto;
-    filter: drop-shadow(0 0 4px #ffcc00);
+    filter: drop-shadow(0 0 6px #ffcc00);
 }
 
 /* HEADER */
