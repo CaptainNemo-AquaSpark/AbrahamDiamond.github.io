@@ -97,11 +97,10 @@ let glitchTimer;
 
 window.addEventListener("scroll", () => {
     document.body.classList.add("glitching");
-
     clearTimeout(glitchTimer);
     glitchTimer = setTimeout(() => {
         document.body.classList.remove("glitching");
-    }, 260); 
+    }, 260);
 });
 </script>
 
