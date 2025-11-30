@@ -125,12 +125,12 @@ section::before {
 }
 
 /* CONTACT FORM */
-form { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 1rem; 
-    max-width: 500px; 
-    margin: auto; 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: auto;
 }
 input, textarea {
     padding: 1rem;
@@ -153,14 +153,14 @@ footer {
 }
 
 /* ============================================== */
-/*          SOFT SCROLL GLITCH EFFECT            */
+/*       VISIBLE SCROLL GLITCH EFFECT             */
 /* ============================================== */
 
 .soft-glitch {
     position: relative;
     display: inline-block;
     color: #d3ff00;
-    text-shadow: 0 0 4px #d3ff00;
+    text-shadow: 0 0 8px #d3ff00;
 }
 
 /* ghost layers */
@@ -170,28 +170,30 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.35;
+    opacity: 0; /* hidden */
     pointer-events: none;
     transform: translate(0,0);
 }
 
-/* red ghost */
 .soft-glitch::before { color: #ff0033; }
-
-/* cyan ghost */
 .soft-glitch::after  { color: #00eaff; }
 
-/* ACTIVE glitch only while scrolling */
-body.glitching .soft-glitch::before {
-    animation: softRedShift 160ms steps(2);
-}
+/* ACTIVE GLITCH */
+body.glitching .soft-glitch::before,
 body.glitching .soft-glitch::after {
-    animation: softCyanShift 160ms steps(2);
+    opacity: 0.7;
 }
 
-@keyframes softRedShift {
-    50% { transform: translate(-2px, 1px); opacity: 0.45; }
+body.glitching .soft-glitch::before {
+    animation: glitchRed 0.25s steps(2);
 }
-@keyframes softCyanShift {
-    50% { transform: translate(2px, -1px); opacity: 0.45; }
+body.glitching .soft-glitch::after {
+    animation: glitchCyan 0.25s steps(2);
+}
+
+@keyframes glitchRed {
+    50% { transform: translate(-4px, 2px); }
+}
+@keyframes glitchCyan {
+    50% { transform: translate(4px, -2px); }
 }
