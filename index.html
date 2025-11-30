@@ -10,7 +10,7 @@
 
 <header>
 
-    <!-- CENTERED LOGO -->
+    <!-- LOGO -->
     <div class="logo">
         <img src="logo.png" alt="Android Modder Portfolio Logo">
     </div>
@@ -43,18 +43,18 @@
 
     <div class="grid">
 
-        <div class="card soft-glitch" data-text="Evolution X GSI">
-            <h3>Evolution X GSI</h3>
+        <div class="card">
+            <h3 class="soft-glitch" data-text="Evolution X GSI">Evolution X GSI</h3>
             <p>Custom ROM flashing guide for Samsung devices.</p>
         </div>
 
-        <div class="card soft-glitch" data-text="Magisk AudioFX Module">
-            <h3>Magisk AudioFX Module</h3>
+        <div class="card">
+            <h3 class="soft-glitch" data-text="Magisk AudioFX Module">Magisk AudioFX Module</h3>
             <p>Rooted equalizer tweaks via Termux.</p>
         </div>
 
-        <div class="card soft-glitch" data-text="Virtual MC Trials">
-            <h3>Virtual MC Trials</h3>
+        <div class="card">
+            <h3 class="soft-glitch" data-text="Virtual MC Trials">Virtual MC Trials</h3>
             <p>Free Audible/Netflix access workflows.</p>
         </div>
 
@@ -64,9 +64,9 @@
 <section id="skills">
     <h2 class="soft-glitch" data-text="Skills">Skills</h2>
     <ul>
-        <li class="soft-glitch" data-text="Android ROMs & GSIs">Android 14/16 Custom ROMs & GSIs</li>
-        <li class="soft-glitch" data-text="TWRP Building">TWRP Recovery Building</li>
-        <li class="soft-glitch" data-text="Magisk Modules">Magisk Modules & Rooting</li>
+        <li class="soft-glitch" data-text="Android ROMs">Android 14/16 Custom ROMs & GSIs</li>
+        <li class="soft-glitch" data-text="TWRP">TWRP Recovery Building</li>
+        <li class="soft-glitch" data-text="Magisk">Magisk Modules & Rooting</li>
         <li class="soft-glitch" data-text="VPN Routing">VPN Routing (Residential IPs)</li>
         <li class="soft-glitch" data-text="Virtual Trials">Virtual Payments & Trials</li>
     </ul>
@@ -74,13 +74,13 @@
 
 <section id="contact">
     <h2 class="soft-glitch" data-text="Contact">Contact</h2>
-    <p class="soft-glitch" data-text="DM for custom ROM requests.">
+    <p class="soft-glitch" data-text="DM for custom ROM requests">
         Guyana-based modder. DM for custom ROM requests.
     </p>
 
     <form>
-        <input type="email" placeholder="Your email" required class="soft-glitch" data-text="">
-        <textarea placeholder="Message" required class="soft-glitch" data-text=""></textarea>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Message" required></textarea>
         <button type="submit" class="soft-glitch" data-text="Send">Send</button>
     </form>
 </section>
@@ -93,15 +93,15 @@
 
 <!-- SCROLL GLITCH SCRIPT -->
 <script>
-let scrollTimer;
+let glitchTimer;
 
 window.addEventListener("scroll", () => {
     document.body.classList.add("glitching");
 
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => {
+    clearTimeout(glitchTimer);
+    glitchTimer = setTimeout(() => {
         document.body.classList.remove("glitching");
-    }, 180); 
+    }, 260); 
 });
 </script>
 
