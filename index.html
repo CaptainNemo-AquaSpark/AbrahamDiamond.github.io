@@ -16,6 +16,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <!-- Dark Mode Toggle -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="themeSwitch">
+                <span class="slider"></span>
+            </label>
+        </div>
     </header>
 
     <section id="home">
@@ -35,6 +43,61 @@
             </div>
             <div class="card">
                 <h3>Magisk AudioFX Module</h3>
+                <p>Rooted equalizer tweaks via Termux.</p>
+            </div>
+            <div class="card">
+                <h3>Virtual MC Trials</h3>
+                <p>Free Audible/Netflix access workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Android 14/16 Custom ROMs & GSIs</li>
+            <li>TWRP Recovery Building</li>
+            <li>Magisk Modules & Rooting</li>
+            <li>VPN Routing (Residential IPs)</li>
+            <li>Virtual Payments & Trials</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Guyana-based modder. DM for custom ROM requests.</p>
+        <form>
+            <input type="email" placeholder="Your email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Android Modder. Free to use and modify.</p>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const switcher = document.getElementById("themeSwitch");
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            switcher.checked = true;
+        }
+
+        switcher.addEventListener("change", () => {
+            if (switcher.checked) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+</html>                <h3>Magisk AudioFX Module</h3>
                 <p>Rooted equalizer tweaks via Termux.</p>
             </div>
             <div class="card">
