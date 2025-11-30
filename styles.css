@@ -31,7 +31,7 @@ body {
 }
 
 .logo img {
-    height: 70px;
+    height: 90px;
     width: auto;
     filter: drop-shadow(0 0 6px #ffcc00);
 }
@@ -42,8 +42,8 @@ header {
     color: #00ff41;
     padding: 4rem 0 1rem 0;
     position: fixed;
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
     top: 0;
     left: 0;
     z-index: 1000;
