@@ -17,10 +17,10 @@
 
     <nav>
         <ul>
-            <li><a href="#home" class="glitch" data-text="Home">Home</a></li>
-            <li><a href="#projects" class="glitch" data-text="Projects">Projects</a></li>
-            <li><a href="#skills" class="glitch" data-text="Skills">Skills</a></li>
-            <li><a href="#contact" class="glitch" data-text="Contact">Contact</a></li>
+            <li><a href="#home" class="soft-glitch" data-text="Home">Home</a></li>
+            <li><a href="#projects" class="soft-glitch" data-text="Projects">Projects</a></li>
+            <li><a href="#skills" class="soft-glitch" data-text="Skills">Skills</a></li>
+            <li><a href="#contact" class="soft-glitch" data-text="Contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -28,29 +28,32 @@
 
 <section id="home">
     <div class="hero">
-        <h1 class="glitch" data-text="Custom Android Mods & Tools">Custom Android Mods & Tools</h1>
-        <p class="glitch" data-text="Rooting, ROMs, VPNs, and media hacks.">
-            Rooting, ROMs, VPNs, and media hacks.
+        <h1 class="soft-glitch" data-text="Custom Android Mods & Tools">
+            Custom Android Mods & Tools
+        </h1>
+        <p class="soft-glitch" data-text="Rooting, ROMs, VPNs, media hacks.">
+            Rooting, ROMs, VPNs, media hacks.
         </p>
-        <a href="#projects" class="cta glitch" data-text="View Projects">View Projects</a>
+        <a href="#projects" class="cta soft-glitch" data-text="View Projects">View Projects</a>
     </div>
 </section>
 
 <section id="projects">
-    <h2 class="glitch" data-text="Featured Projects">Featured Projects</h2>
+    <h2 class="soft-glitch" data-text="Featured Projects">Featured Projects</h2>
+
     <div class="grid">
 
-        <div class="card glitch" data-text="Evolution X GSI">
+        <div class="card soft-glitch" data-text="Evolution X GSI">
             <h3>Evolution X GSI</h3>
             <p>Custom ROM flashing guide for Samsung devices.</p>
         </div>
 
-        <div class="card glitch" data-text="Magisk AudioFX">
+        <div class="card soft-glitch" data-text="Magisk AudioFX Module">
             <h3>Magisk AudioFX Module</h3>
             <p>Rooted equalizer tweaks via Termux.</p>
         </div>
 
-        <div class="card glitch" data-text="Virtual MC Trials">
+        <div class="card soft-glitch" data-text="Virtual MC Trials">
             <h3>Virtual MC Trials</h3>
             <p>Free Audible/Netflix access workflows.</p>
         </div>
@@ -59,45 +62,47 @@
 </section>
 
 <section id="skills">
-    <h2 class="glitch" data-text="Skills">Skills</h2>
+    <h2 class="soft-glitch" data-text="Skills">Skills</h2>
     <ul>
-        <li class="glitch" data-text="Android ROMs & GSIs">Android 14/16 Custom ROMs & GSIs</li>
-        <li class="glitch" data-text="TWRP Building">TWRP Recovery Building</li>
-        <li class="glitch" data-text="Magisk & Root">Magisk Modules & Rooting</li>
-        <li class="glitch" data-text="VPN Routing">VPN Routing (Residential IPs)</li>
-        <li class="glitch" data-text="Virtual Trials">Virtual Payments & Trials</li>
+        <li class="soft-glitch" data-text="Android ROMs & GSIs">Android 14/16 Custom ROMs & GSIs</li>
+        <li class="soft-glitch" data-text="TWRP Building">TWRP Recovery Building</li>
+        <li class="soft-glitch" data-text="Magisk Modules">Magisk Modules & Rooting</li>
+        <li class="soft-glitch" data-text="VPN Routing">VPN Routing (Residential IPs)</li>
+        <li class="soft-glitch" data-text="Virtual Trials">Virtual Payments & Trials</li>
     </ul>
 </section>
 
 <section id="contact">
-    <h2 class="glitch" data-text="Contact">Contact</h2>
-    <p class="glitch" data-text="DM for custom ROM requests.">
+    <h2 class="soft-glitch" data-text="Contact">Contact</h2>
+    <p class="soft-glitch" data-text="DM for custom ROM requests.">
         Guyana-based modder. DM for custom ROM requests.
     </p>
 
     <form>
-        <input type="email" placeholder="Your email" required class="glitch" data-text="">
-        <textarea placeholder="Message" required class="glitch" data-text=""></textarea>
-        <button type="submit" class="glitch" data-text="Send">Send</button>
+        <input type="email" placeholder="Your email" required class="soft-glitch" data-text="">
+        <textarea placeholder="Message" required class="soft-glitch" data-text=""></textarea>
+        <button type="submit" class="soft-glitch" data-text="Send">Send</button>
     </form>
 </section>
 
 <footer>
-    <p class="glitch" data-text="© 2025 Android Modder">© 2025 Android Modder. Free to use and modify.</p>
+    <p class="soft-glitch" data-text="© 2025 Android Modder">
+        © 2025 Android Modder. Free to use and modify.
+    </p>
 </footer>
 
-<!-- GLITCH SCRIPT -->
+<!-- SCROLL GLITCH SCRIPT -->
 <script>
-function randomGlitch() {
-    document.querySelectorAll(".glitch").forEach(el => {
-        if (Math.random() < 0.06) {  // gentle 6% chance
-            el.classList.add("animate");
-            setTimeout(() => el.classList.remove("animate"), 150);
-        }
-    });
-}
+let scrollTimer;
 
-setInterval(randomGlitch, 1200); // once every 1.2 sec
+window.addEventListener("scroll", () => {
+    document.body.classList.add("glitching");
+
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+        document.body.classList.remove("glitching");
+    }, 180); 
+});
 </script>
 
 </body>
