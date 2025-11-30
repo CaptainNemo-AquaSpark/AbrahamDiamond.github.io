@@ -21,7 +21,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* CENTERED BIG LOGO */
+/* CENTERED SMALLER LOGO */
 .logo {
     width: 100%;
     text-align: center;
