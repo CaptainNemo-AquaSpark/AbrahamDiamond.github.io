@@ -20,7 +20,7 @@ body {
     filter: drop-shadow(0 0 6px #ffcc00);
 }
 
-/* HEADER – SCROLLS AWAY */
+/* HEADER */
 header {
     background: #000;
     border-bottom: 2px solid #00ff41;
@@ -40,8 +40,8 @@ nav ul {
 nav li { margin: 0 1.4rem; }
 nav a {
     color: #00ff41;
-    font-weight: 700;
     text-decoration: none;
+    font-weight: 700;
     text-shadow: 0 0 4px #00ff41;
     transition: 0.3s;
 }
@@ -125,7 +125,13 @@ section::before {
 }
 
 /* CONTACT FORM */
-form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto; }
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+    max-width: 500px; 
+    margin: auto; 
+}
 input, textarea {
     padding: 1rem;
     background: #000;
@@ -138,9 +144,7 @@ button {
     color: #000;
     font-weight: 700;
 }
-button:hover {
-    background: #00ff88;
-}
+button:hover { background: #00ff88; }
 
 /* FOOTER */
 footer {
@@ -149,49 +153,45 @@ footer {
 }
 
 /* ============================================== */
-/*         SOFT RARE GLITCH EFFECT                */
+/*          SOFT SCROLL GLITCH EFFECT            */
 /* ============================================== */
-.glitch {
+
+.soft-glitch {
     position: relative;
     display: inline-block;
-    font-weight: 700;
     color: #d3ff00;
     text-shadow: 0 0 4px #d3ff00;
 }
 
-.glitch::before,
-.glitch::after {
+/* ghost layers */
+.soft-glitch::before,
+.soft-glitch::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0.35;
     pointer-events: none;
+    transform: translate(0,0);
 }
 
-/* Red ghost */
-.glitch::before {
-    color: #ff0033;
-    z-index: -1;
+/* red ghost */
+.soft-glitch::before { color: #ff0033; }
+
+/* cyan ghost */
+.soft-glitch::after  { color: #00eaff; }
+
+/* ACTIVE glitch only while scrolling */
+body.glitching .soft-glitch::before {
+    animation: softRedShift 160ms steps(2);
+}
+body.glitching .soft-glitch::after {
+    animation: softCyanShift 160ms steps(2);
 }
 
-/* Cyan ghost */
-.glitch::after {
-    color: #00eaff;
-    z-index: -1;
+@keyframes softRedShift {
+    50% { transform: translate(-2px, 1px); opacity: 0.45; }
 }
-
-.glitch.animate::before {
-    animation: softGlitchRed 120ms steps(2);
-}
-.glitch.animate::after {
-    animation: softGlitchCyan 120ms steps(2);
-}
-
-@keyframes softGlitchRed {
-    50% { transform: translate(-2px, 1px); }
-}
-
-@keyframes softGlitchCyan {
-    50% { transform: translate(2px, -1px); }
+@keyframes softCyanShift {
+    50% { transform: translate(2px, -1px); opacity: 0.45; }
 }
