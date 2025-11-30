@@ -1,3 +1,6 @@
+/* TERMINAL FONT */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /* RESET */
 * {
     margin: 0;
@@ -7,7 +10,7 @@
 
 /* BODY */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     line-height: 1.6;
     background: #000;
     color: #00ff41;
@@ -19,23 +22,23 @@ body {
 .logo {
     width: 100%;
     text-align: center;
-    margin-top: 20px; /* drops logo down nicely */
+    margin-top: 20px;
     pointer-events: none;
 }
 
 .logo img {
-    height: 140px; /* big logo */
+    height: 140px;
     width: auto;
     filter: drop-shadow(0 0 6px #ffcc00);
 }
 
-/* HEADER – NOW SCROLLS AWAY (NOT FIXED) */
+/* HEADER – SCROLLS AWAY */
 header {
     background: #000;
     color: #00ff41;
     padding: 0.5rem 0 0.3rem 0;
     width: 100%;
-    position: relative; /* no fixed header */
+    position: relative;
     border-bottom: 2px solid #00ff41;
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
@@ -63,8 +66,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #00ff88;
-    text-shadow: 0 0 20px #00ff88;
+    color: #d3ff00;
+    text-shadow: 0 0 20px #d3ff00;
 }
 
 /* SECTION BASE */
@@ -89,7 +92,7 @@ section::before {
     z-index: 1;
 }
 
-/* HOME SECTION – SMALLER TOP SPACE NOW */
+/* HOME SECTION */
 #home {
     background: radial-gradient(circle at center, #001a00 0%, #000 70%);
     margin-top: 20px;
@@ -98,15 +101,6 @@ section::before {
 .hero h1 {
     font-size: 3.5rem;
     text-shadow: 0 0 10px #00ff41;
-    animation: glitch 2s infinite;
-}
-
-@keyframes glitch {
-    0%,100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
 }
 
 /* CTA BUTTON */
@@ -165,7 +159,7 @@ section::before {
     text-align: left;
 }
 
-/* CONTACT */
+/* CONTACT FORM */
 form {
     display: flex;
     flex-direction: column;
@@ -203,4 +197,48 @@ footer {
     color: #00ff41;
     padding: 1rem;
     border-top: 2px solid #00ff41;
+}
+
+/* ========================= */
+/* YELLOW GLITCH EFFECT */
+/* ========================= */
+
+.glitch {
+    position: relative;
+    color: #d3ff00;
+    text-shadow: 0 0 5px #d3ff00;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #d3ff00;
+    background: transparent;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch.scroll-active::before {
+    animation: glitchTop 0.3s linear forwards;
+}
+
+.glitch.scroll-active::after {
+    animation: glitchBottom 0.3s linear forwards;
+}
+
+@keyframes glitchTop {
+    0% { clip: rect(0, 999px, 0, 0); left: -2px; }
+    25% { clip: rect(0, 999px, 15px, 0); left: 2px; }
+    50% { clip: rect(0, 999px, 5px, 0); left: -1px; }
+    100% { clip: rect(0, 999px, 0, 0); left: 0; }
+}
+
+@keyframes glitchBottom {
+    0% { clip: rect(20px, 999px, 40px, 0); left: 2px; }
+    25% { clip: rect(10px, 999px, 50px, 0); left: -2px; }
+    50% { clip: rect(5px, 999px, 25px, 0); left: 1px; }
+    100% { clip: rect(0, 999px, 0, 0); left: 0; }
 }
